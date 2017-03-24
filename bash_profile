@@ -53,9 +53,6 @@ if [ -d "$(brew --prefix)/etc/bash_completion.d" ]; then
   done
 fi
 
-# Docker
-eval $(docker-machine env default)
-
 # Bundler shortcuts
 # via http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/
 alias b="bundle"
@@ -64,17 +61,3 @@ alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && bil && echo '.bundle/' >> .gitignore && echo 'vendor/cache/' >> .gitignore"
-# Open a bundle-installed gem in your editor
-# usage:   bo gem-name
-mate_bundle_show() {
-  local gem_path=
-  gem_path=$(b show "$1")
-  local b_show_ret=$?
-  if [ $b_show_ret -eq 0 ]; then
-    mate `b show "$1"`
-  else
-    echo "$gem_path"
-    return $b_show_ret
-  fi
-}
-alias bo=mate_bundle_show
