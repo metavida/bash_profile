@@ -2,19 +2,24 @@
 
 # sudobin is Marcos' way of not just letting homebrew override any old system binary
 export PATH=/usr/local/sudobin:$PATH
-# chefdk
-export PATH=$HOME/.chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/bin:$PATH
+if [ -d "$HOME/.chefdk" ]; then
+  # chefdk
+  export PATH=$HOME/.chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/bin:$PATH
+fi
 # link homebrew sbins
 export PATH=$PATH:/usr/local/sbin
 # go-installed binaries
 export PATH=$PATH:/usr/local/gocode/bin
+
+#export PATH=/usr/local/bin:$PATH
+
 
 # Helpers
 alias ll="ls -l"
 
 # Import my custom .bash_scripts
 source ~/.bash_scripts/ps1.sh
-source ~/.bash_scripts/keys.sh
+[[ -f ~/.bash_scripts/keys.sh ]] && source ~/.bash_scripts/keys.sh
 
 # foreman
 alias fm="forego"
@@ -27,8 +32,13 @@ alias gdm="git diff | mate"
 # Go
 export GOPATH=/usr/local/gocode
 
-# rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# rvm and/or rbenv
+if [[ -d "$HOME/.rvm" ]]; then
+  # Load RVM into a shell session *as a function*
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+elif which rbenv >/dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
 
 source ~/.bash_scripts/haiku.sh
 

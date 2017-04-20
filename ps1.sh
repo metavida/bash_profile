@@ -11,6 +11,11 @@ bldwht='\[\e[1;37m\]' # White
 end='\[\e[0m\]'    # Text Reset
 
 function parse_git {
+  if ! type __git_ps1 >/dev/null 2>&1; then
+    echo ""
+    return 0
+  fi
+
    branch=$(__git_ps1 "%s")
    if [[ -z $branch ]]; then
        return
