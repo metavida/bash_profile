@@ -1,0 +1,40 @@
+
+[alias]
+  st = status
+  co = checkout
+  ci = commit
+  br = branch
+  fp = "!f() { set -e; HASH=`git merge-base --fork-point \"$1\"`; shift; git log -n1 \"$HASH\"; }; f"
+  fork-point = "!git fp"
+  #fork-point = merge-base --fork-point
+  brdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  whenadded = log --diff-filter=A
+  dl = "!git ll -1"
+  dlc = diff --cached HEAD^
+
+  # Usage:
+  #$ git inject <commit-ref> <patch-ref>
+  #$ git inject HEAD^^ -a # inject all work-dir modifications
+  #$ git inject a28kd8 -p # interactively select patches to inject
+  #$ git inject HEAD~4 file1 # inject the modifications in file1
+  # via https://news.ycombinator.com/item?id=9705690
+  inject = "!f() { set -e; HASH=`git show \"$1\" --pretty=format:\"%H\" -q`; shift; git commit -m \"fixup! $HASH\" $*; [ -n \"$(git diff-files)\" ] && git stash && DIRTY=1; git rebase $HASH^^ -i --autosquash; [ -n \"$DIRTY\" ] && git stash pop;}; f"
+
+[user]
+  email = webmaster@wrightkuhns.com
+  name = Marcos Wright-Kuhns
+[push]
+	default = simple
+[pull]
+	rebase = true
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[core]
+	editor = /usr/bin/vim
+	autocrlf = input
+[merge]
+	ff = false
