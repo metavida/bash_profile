@@ -1,0 +1,73 @@
+"*":
+  "Sublime-Style-Column-Selection": {}
+  core:
+    customFileTypes:
+      "source.ruby": [
+        "MwkFile"
+      ]
+    disabledPackages: [
+      "linter-js-standard"
+      "color-picker"
+      "linter-haproxy"
+    ]
+    ignoredNames: [
+      ".git"
+      ".svn"
+      ".DS_Store"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "atom-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+    softWrap: true
+  "exception-reporting":
+    userId: "e4868af7-b2c7-0664-360e-d0568ae8dddc"
+  "file-icons": {}
+  linter: {}
+  "linter-js-standard":
+    style: "semi-standard"
+  "linter-jshint":
+    executablePath: "/usr/local/bin/jshint"
+    lintInlineJavaScript: true
+  "linter-ruby":
+    rubyExecutablePath: "/Users/marcoswk/.rvm/rubies/ruby-2.3.0/bin/ruby"
+  "linter-shellcheck":
+    enableNotice: true
+    shellcheckExecutablePath: "/usr/local/bin/shellcheck"
+    userParameters: "-e SC1091"
+  "linter-ui-default": {}
+  metrics:
+    userId: "f7d5f7e17ded28e038478a742f20d51f95d0301f"
+  minimap:
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      cursorline: false
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
+      selection: true
+      selectionDecorationsZIndex: 0
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
+  "minimap-selection":
+    highlightCursorsLines: true
+  "release-notes":
+    viewedVersion: "0.73.0"
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
