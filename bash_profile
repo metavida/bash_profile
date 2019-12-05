@@ -33,6 +33,9 @@ baconipsum() {
 source ~/.bash_scripts/ps1.sh
 [[ -f ~/.bash_scripts/keys.sh ]] && source ~/.bash_scripts/keys.sh
 
+# Docker
+alias doco='docker-compose'
+
 # foreman
 alias fm="OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES forego"
 alias fms="fm start"
