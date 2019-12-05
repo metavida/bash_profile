@@ -41,6 +41,7 @@ elif which rbenv >/dev/null 2>&1; then
 fi
 
 source ~/.bash_scripts/haiku.sh
+[[ -f ~/.bash_scripts/nr.sh ]] && source ~/.bash_scripts/nr.sh
 
 # Autocomplete
 if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
