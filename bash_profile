@@ -55,6 +55,18 @@ elif which rbenv >/dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
 
+# vnm (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+
+# Python
+# Use the brew-installed python instead of the OSX version
+alias python-og="$(which python)"
+alias python="$(which python2)"
+alias pip="$(which pip2)"
+
 source ~/.bash_scripts/haiku.sh
 [[ -f ~/.bash_scripts/nr.sh ]] && source ~/.bash_scripts/nr.sh
 
