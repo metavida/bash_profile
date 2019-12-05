@@ -25,8 +25,9 @@
   # via https://news.ycombinator.com/item?id=9705690
   inject = "!f() { set -e; HASH=`git show \"$1\" --pretty=format:\"%H\" -q`; shift; git commit -m \"fixup! $HASH\" $*; [ -n \"$(git diff-files)\" ] && git stash && DIRTY=1; git rebase $HASH^^ -i --autosquash; [ -n \"$DIRTY\" ] && git stash pop;}; f"
 
+
 [user]
-  email = webmaster@wrightkuhns.com
+  email = mwrightkuhns@newrelic.com
   name = Marcos Wright-Kuhns
 [push]
 	default = simple
@@ -41,3 +42,5 @@
 	autocrlf = input
 [merge]
 	ff = false
+[hub]
+	host = source.datanerd.us
