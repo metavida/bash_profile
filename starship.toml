@@ -1,0 +1,10 @@
+# Must be symlinked to ~/.config/starship.toml
+#     mkdir -p ~/.config
+#     ln -nfs ~/.bash_scripts/starship.toml ~/.config/starship.toml
+#
+# Config docs: https://starship.rs/config/
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"

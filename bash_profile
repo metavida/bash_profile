@@ -29,8 +29,11 @@ baconipsum() {
   curl -sS "https://baconipsum.com/api/?type=meat-and-filler&start-with-lorem=1&paras=$numParas" >&1 | jq -r 'join("\n\n")'
 }
 
+# Configure the prompt with Starship
+# via `brew install starship`
+command -v starship >/dev/null && eval "$(starship init bash)"
+
 # Import my custom .bash_scripts
-source ~/.bash_scripts/ps1.sh
 [[ -f ~/.bash_scripts/keys.sh ]] && source ~/.bash_scripts/keys.sh
 
 # Docker
