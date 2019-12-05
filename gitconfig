@@ -11,11 +11,20 @@
   fork-point = "!git fp"
   #fork-point = merge-base --fork-point
   brdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   whenadded = log --diff-filter=A
   dl = "!git ll -1"
   dlc = diff --cached HEAD^
+
+  # A gentler way to force push
+  please = push --force-with-lease
+
+  # stsh: only unstaged changes to tracked files
+  stsh = stash --keep-index
+  # stash: any changes to tracked files
+  # staash: untracked and tracked files
+  staash = stash --include-untracked
+  # staaash: ignored, untracked, and tracked files
+  staaash = stash --all
 
   # Usage:
   #$ git inject <commit-ref> <patch-ref>
