@@ -91,6 +91,12 @@ if [ -d "$(brew --prefix)/etc/bash_completion.d" ]; then
   done
 fi
 
+# Load AutoJump
+# via `brew install autojump`
+if [ -f /usr/local/etc/profile.d/autojump.sh ]; then
+  . /usr/local/etc/profile.d/autojump.sh
+fi
+
 # Bundler shortcuts
 # via http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/
 alias b="bundle"
