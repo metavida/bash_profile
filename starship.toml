@@ -4,7 +4,22 @@
 #
 # Config docs: https://starship.rs/config/
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
+# Replace the "❯" symbol in the prompt with "➜"
+[character]      # The name of the module we are configuring is "character"
+symbol = "➜"     # The "symbol" segment is being set to "➜"
+
+# Disable "took Xs"
+[cmd_duration]
+disabled = true
+
+# Customize git status to match what I was used to
+[git_status]
+ahead     = '⟫'
+behind    = '⟪'
+diverged  = '⦓⦔'
+stashed   = ''
+modified  = ''
+renamed   = ''
+prefix    = ''
+suffix    = ' '
+style     = 'bold purple'
