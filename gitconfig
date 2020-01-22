@@ -12,7 +12,7 @@
   fp = "!f() { set -e; HASH=`git merge-base --fork-point \"$1\"`; shift; git log -n1 \"$HASH\"; }; f"
   fork-point = "!git fp"
   #fork-point = merge-base --fork-point
-  brdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+  brdm = "!git branch --merged | egrep -v '^\\*|master' | xargs -n 1 git branch -d"
   whenadded = log --diff-filter=A
   dl = "!git ll -1"
   dlc = diff --cached HEAD^
