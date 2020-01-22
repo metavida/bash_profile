@@ -5,6 +5,8 @@
 [alias]
   st = status --short --branch
   co = checkout
+  # Given a GitHub PR number, check out the code for that PR
+  co-pr = !sh -c 'git fetch upstream pull/$1/head:pr/$1 && git checkout pr/$1' -
   ci = commit
   br = branch
   fp = "!f() { set -e; HASH=`git merge-base --fork-point \"$1\"`; shift; git log -n1 \"$HASH\"; }; f"
