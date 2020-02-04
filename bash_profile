@@ -58,10 +58,20 @@ elif which rbenv >/dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
 
-# vnm (Node Version Manager)
+# nvm (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+# auto-nvm on cd (via https://stackoverflow.com/a/48322289/5539 )
+nvm_enter_directory() {
+  if [[ $PWD == $NVM_PREV_PWD ]]; then
+    return
+  fi
+
+  NVM_PREV_PWD=$PWD
+  [[ -f ".nvmrc" ]] && nvm use > /dev/null
+}
+export PROMPT_COMMAND="nvm_enter_directory;$PROMPT_COMMAND"
 
 
 # Python
