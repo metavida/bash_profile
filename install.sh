@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# Get the name of the current folder
+BASH_SCRIPTS_DIR="${PWD}"
+
+if [ -z "$BASH_SCRIPTS_DIR" ]; then
+  echo "ERROR: No BASH_SCRIPTS_DIR environment variable set."
+  exit 1
+fi
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "ERROR: Please install oh-my-zsh first (no ~/.oh-my-zsh directory found)"
+  echo "https://ohmyz.sh/#install"
+  exit 2
+fi
+
+read -p "Create symlinks to the $BASH_SCRIPTS_DIR directory? [yN] " yn
+  case $yn in
+    [Yy]* ) echo "Installing ...";;
+    * ) echo "Canceled. No changes made." && exit 0;;
+  esac
+
+echo "~/.zshrc : Creating symlink..."
+mv ~/.zshrc ~/.zshrc.pre-basH-scripts
+ln -nfs "$BASH_SCRIPTS_DIR/zshrc" ~/.zshrc
+# TODO: symlink zshrc
+# TODO: symlink git config
+
+
+echo ""
+echo "Configuration complete!!"
+echo "Please open $BASH_SCRIPTS_DIR/install.sh and run all the 'brew install' commands!"
+exit 0
+
+echo "Configure homebrew"
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+
+echo "Installing fonts"
+brew cask install font-fira-code
+
+# Starship prompt
+brew install starship
+# JSON querying magic ✨
+brew install jq
+# Ruby Version Manager
+brew install rbenv
+# Node Version Manager
+brew install nvm

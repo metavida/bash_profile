@@ -1,17 +1,18 @@
 # metavida ~/.bash_profile
 
-A quick repo to store my bash customizations.
+A quick repo to store my shell configuration & customization.
 
 # Usage
 
+1. [Install Oh My ZSH!](https://ohmyz.sh/#install)
 1. Check out this repo.
 ```
 $ git clone git@github.com:metavida/bash_profile.git ~/.bash_scripts
 ```
-2. Symlink bash_profile and gitconfig into place.
+1. Run the install script to symlink .zshrc, .git/config, etc.
 ```
-$ ln -nfs ~/.bash_scripts/bash_profile ~/.bash_profile
-$ ln -nfs ~/.bash_scripts/gitconfig ~/.gitconfig
+$ cd ~/.bash_scripts
+$ ./install.sh
 ```
 3. Create a `keys.sh` file and add any secrets there.
 ```
