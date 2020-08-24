@@ -1,5 +1,5 @@
 # rbenv https://github.com/rbenv/rbenv/#installation
-eval "$(rbenv init -)"
+command -v rbenv >/dev/null && eval "$(rbenv init -)"
 
 # NVM https://github.com/nvm-sh/nvm#installing-and-updating
 export NVM_DIR="$HOME/.nvm"
