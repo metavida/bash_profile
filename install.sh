@@ -53,9 +53,21 @@ brew cask install font-fira-code
 
 # Starship prompt
 brew install starship
-# JSON querying magic ✨
-brew install jq
 # Ruby Version Manager
 brew install rbenv
 # Node Version Manager
 brew install nvm
+# Node
+brew install node
+# Search all the files with `ag`!
+brew install the_silver_searcher
+# cd quickly with `j`!
+brew install autojump
+# JSON querying magic ✨
+brew install jq
+# Powerful CSV tooling
+brew install miller
+# shell linter
+brew install shellcheck
+# short & sweet man pages
+brew install tldr
