@@ -14,7 +14,8 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   exit 2
 fi
 
-read -p "Create symlinks to the $BASH_SCRIPTS_DIR directory? [yN] " yn
+echo "Create symlinks to the $BASH_SCRIPTS_DIR directory? [yN] "
+read -r yn
   case $yn in
     [Yy]* ) echo "Installing ...";;
     * ) echo "Canceled. No changes made." && exit 0;;
@@ -28,9 +29,9 @@ echo "~/.gitconfig : Creating symlink..."
 mv ~/.gitconfig ~/.gitconfig.pre-bash_scripts
 ln -nfs "$BASH_SCRIPTS_DIR/gitconfig" ~/.gitconfig
 
-if [ ! -f $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh ]; then
+if [ ! -f "$BASH_SCRIPTS_DIR/zsh-custom/keys.zsh" ]; then
   echo "keys.zsh : Creating empty placeholder..."
-  cat > $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh <<KEYS
+  cat > "$BASH_SCRIPTS_DIR/zsh-custom/keys.zsh" <<KEYS
 # Place environment variables containing local secrets in this file
 
 # export SECRETS=TBD
