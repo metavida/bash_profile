@@ -90,7 +90,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Configure the prompt with Starship
-# via `brew install starship`
-command -v starship >/dev/null && eval "$(starship init bash)"
