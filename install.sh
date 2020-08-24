@@ -23,13 +23,23 @@ read -p "Create symlinks to the $BASH_SCRIPTS_DIR directory? [yN] " yn
 echo "~/.zshrc : Creating symlink..."
 mv ~/.zshrc ~/.zshrc.pre-basH-scripts
 ln -nfs "$BASH_SCRIPTS_DIR/zshrc" ~/.zshrc
-# TODO: symlink zshrc
-# TODO: symlink git config
 
+if [ ! -f $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh ]; then
+  echo "keys.zsh : Creating empty placeholder..."
+  cat > $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh <<KEYS
+# Place environment variables containing local secrets in this file
+
+# export SECRETS=TBD
+KEYS
+fi
+
+# TODO: symlink git config
 
 echo ""
 echo "Configuration complete!!"
-echo "Please open $BASH_SCRIPTS_DIR/install.sh and run all the 'brew install' commands!"
+echo ""
+echo "1. Install apps at the bottom of $BASH_SCRIPTS_DIR/install.sh via the 'brew install' commands."
+echo "2. Add secret exports in the $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh file."
 exit 0
 
 echo "Configure homebrew"

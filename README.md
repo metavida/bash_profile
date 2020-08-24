@@ -14,8 +14,5 @@ $ git clone git@github.com:metavida/bash_profile.git ~/.bash_scripts
 $ cd ~/.bash_scripts
 $ ./install.sh
 ```
-3. Create a `keys.sh` file and add any secrets there.
-```
-$ touch ~/.bash_scripts/keys.sh && chmod 600 ~/.bash_scripts/keys.sh
-```
-4. Enjoy!
+1. Follow the rest of the isntall instructions to install a bunch of my offt-used apps.
+1. Enjoy!
