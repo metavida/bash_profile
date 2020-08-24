@@ -1,6 +1,6 @@
 
 [commit]
-  template = ~/.gitmessage
+  template = ~/.bash_scripts/gitmessage
 
 [alias]
   st = status --short --branch
@@ -12,6 +12,7 @@
   fp = "!f() { set -e; HASH=`git merge-base --fork-point \"$1\"`; shift; git log -n1 \"$HASH\"; }; f"
   fork-point = "!git fp"
   #fork-point = merge-base --fork-point
+  # brdm: Clean up local branches that have already been merged
   brdm = "!git branch --merged | egrep -v '^\\*|master' | xargs -n 1 git branch -d"
   whenadded = log --diff-filter=A
   dl = "!git ll -1"
@@ -53,7 +54,8 @@
 [core]
   editor = /usr/bin/vim
   autocrlf = input
-  excludesFile = /Users/mwright/.gitignore
+  # excludesFile = ~/.bash_scripts/gitignore
+  precomposeunicode = true
 [merge]
   ff = false
 [apply]
