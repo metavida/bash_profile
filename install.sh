@@ -21,8 +21,12 @@ read -p "Create symlinks to the $BASH_SCRIPTS_DIR directory? [yN] " yn
   esac
 
 echo "~/.zshrc : Creating symlink..."
-mv ~/.zshrc ~/.zshrc.pre-basH-scripts
+mv ~/.zshrc ~/.zshrc.pre-bash_scripts
 ln -nfs "$BASH_SCRIPTS_DIR/zshrc" ~/.zshrc
+
+echo "~/.gitconfig : Creating symlink..."
+mv ~/.gitconfig ~/.gitconfig.pre-bash_scripts
+ln -nfs "$BASH_SCRIPTS_DIR/gitconfig" ~/.gitconfig
 
 if [ ! -f $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh ]; then
   echo "keys.zsh : Creating empty placeholder..."
@@ -32,8 +36,6 @@ if [ ! -f $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh ]; then
 # export SECRETS=TBD
 KEYS
 fi
-
-# TODO: symlink git config
 
 echo ""
 echo "Configuration complete!!"
