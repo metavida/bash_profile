@@ -1,6 +1,20 @@
 #!/bin/bash
 
+# DEPRECATED! Note: This file has been superseded by `zshrc`
+#
+# 88888b.  8888888 88888b.  88888b.  8888888 .d888b.        d88 88888888 8888888 88888b.
+# 88  "Y8b 88      88   Y8b 88   Y8b 88     d88P  Y8b      d888    88    88      88  "Y8b
+# 88    88 88      88    88 88    88 88     888    88     d8P88    88    88      88    88
+# 88    88 88888   88   d8P 88   d8P 88888  888          d8P 88    88    88888   88    88
+# 88    88 88      88888P"  88888P"  88     888         d8P  88    88    88      88    88
+# 88    88 88      88       88 T8b   88     888    88  d8P   88    88    88      88    88
+# 88  .d8P 88      88       88  T8b  88     Y88b  d8P d88888888    88    88      88  .d8P
+# 88888P"  8888888 88       88   T8b 8888888 "Y888P" d8P     88    88    8888888 88888P"
+
+
 # sudobin is Marcos' way of not just letting homebrew override any old system binary
+# Setup:
+#     sudo mkdir /usr/local/sudobin && sudo chmod 755 /usr/local/sudobin && sudo -k
 export PATH=/usr/local/sudobin:$PATH
 if [ -d "$HOME/.chefdk" ]; then
   # chefdk
