@@ -9,8 +9,9 @@
   co-pr = !sh -c 'git fetch upstream pull/$1/head:pr/$1 && git checkout pr/$1' -
   ci = commit
   br = branch
-  fp = "!f() { set -e; HASH=`git merge-base --fork-point \"$1\"`; shift; git log -n1 \"$HASH\"; }; f"
-  fork-point = "!git fp"
+  fp = fetch -p
+  fetch-p = fetch -p
+  fork-point = "!f() { set -e; HASH=`git merge-base --fork-point \"$1\"`; shift; git log -n1 \"$HASH\"; }; f"
   #fork-point = merge-base --fork-point
   # brdm: Clean up local branches that have already been merged
   brdm = "!git branch --merged | egrep -v '^\\*|master' | xargs -n 1 git branch -d"
