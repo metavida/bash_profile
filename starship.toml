@@ -19,3 +19,11 @@ renamed   = ''
 prefix    = ''
 suffix    = ' '
 style     = 'bold purple'
+
+[kubernetes]
+disabled = false
+symbol = "☸"
+# style = "dimmed blue"
+style = "#525252"
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
