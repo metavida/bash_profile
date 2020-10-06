@@ -50,8 +50,12 @@ brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 
 echo "Installing fonts"
+# https://github.com/tonsky/FiraCode
 brew cask install font-fira-code
+# https://www.jetbrains.com/lp/mono/
 brew cask install font-jetbrains-mono
+# https://github.com/rbanffy/3270font
+brew cask install font-3270
 
 # Starship prompt
 brew install starship
