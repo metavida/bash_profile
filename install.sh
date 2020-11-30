@@ -77,3 +77,6 @@ brew install miller
 brew install shellcheck
 # short & sweet man pages
 brew install tldr
+# dip - to help with dev mode in Docker
+brew tap bibendi/dip
+brew install dip
