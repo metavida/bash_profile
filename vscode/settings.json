@@ -1,0 +1,22 @@
+{
+  "banner-comments.h1": "Colossal",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true,
+  "editor.fontSize": 13,
+  "editor.tabSize": 2,
+  "editor.matchBrackets": "never",
+  "explorer.confirmDragAndDrop": false,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    ".env.*": "dotenv"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "search.useGlobalIgnoreFiles": true,
+  "editor.fontFamily": "'JetBrains Mono', FiraCode-Retina, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontWeight": "300", // Light
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "on",
+  "ruby.rubocop.useBundler": true
+}
