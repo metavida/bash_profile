@@ -40,7 +40,7 @@
 
 
 [user]
-  email = mwrightkuhns@newrelic.com
+  email = mwrightkuhns@pagerduty.com
   name = Marcos Wright-Kuhns
 [push]
   default = simple
