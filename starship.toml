@@ -16,8 +16,7 @@ diverged  = '⦓⦔'
 stashed   = ''
 modified  = ''
 renamed   = ''
-prefix    = ''
-suffix    = ' '
+format = '([$all_status$ahead_behind]($style) )'
 style     = 'bold purple'
 
 [kubernetes]
