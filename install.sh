@@ -39,11 +39,22 @@ if [ ! -f "$BASH_SCRIPTS_DIR/zsh-custom/keys.zsh" ]; then
 KEYS
 fi
 
+SUDOBIN_PATH="$(brew --prefix)/sudobin"
+echo "$SUDOBIN_PATH : Creating folder (requires sudo)..."
+echo ""
+if [ ! -d "$SUDOBIN_PATH" ]; then
+  sudo mkdir "$SUDOBIN_PATH"
+fi
+sudo chmod 755 "$SUDOBIN_PATH"
+sudo chown root:wheel "$SUDOBIN_PATH"
+sudo -k
+
 echo ""
 echo "Configuration complete!!"
 echo ""
 echo "1. Install apps at the bottom of $BASH_SCRIPTS_DIR/install.sh via the 'brew install' commands."
-echo "2. Add secret exports in the $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh file."
+echo "2. Symlink apps to sudobin to override system defaults (e.g. sudo ln -nfs $(brew --prefix)/bin/git $SUDOBIN_PATH/git"
+echo "3. Add secret exports in the $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh file."
 exit 0
 
 echo "Configure homebrew"
@@ -60,6 +71,11 @@ brew install font-3270
 
 # Starship prompt
 brew install starship
+
+# Install the latest git
+brew install git
+sudo ln -nfs "$(brew --prefix)/bin/git" "$(brew --prefix)/sudobin/git"
+
 # Ruby Version Manager
 brew install rbenv
 # Node Version Manager
