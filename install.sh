@@ -1,4 +1,5 @@
 #!/bin/sh
+set -euo pipefail
 
 # Get the name of the current folder
 BASH_SCRIPTS_DIR="${PWD}"
@@ -22,11 +23,11 @@ read -r yn
   esac
 
 echo "~/.zshrc : Creating symlink..."
-mv ~/.zshrc ~/.zshrc.pre-bash_scripts
+mv ~/.zshrc ~/.zshrc.pre-bash_scripts || true
 ln -nfs "$BASH_SCRIPTS_DIR/zshrc" ~/.zshrc
 
 echo "~/.gitconfig : Creating symlink..."
-mv ~/.gitconfig ~/.gitconfig.pre-bash_scripts
+mv ~/.gitconfig ~/.gitconfig.pre-bash_scripts || true
 ln -nfs "$BASH_SCRIPTS_DIR/gitconfig" ~/.gitconfig
 
 if [ ! -f "$BASH_SCRIPTS_DIR/zsh-custom/keys.zsh" ]; then
