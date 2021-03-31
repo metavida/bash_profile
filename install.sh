@@ -76,12 +76,29 @@ brew install starship
 brew install git
 sudo ln -nfs "$(brew --prefix)/bin/git" "$(brew --prefix)/sudobin/git"
 
+# Pick a version management option!
+# OPTION 1: asdf all-the-things:
+# First, install prerequisites listed here: https://asdf-vm.com/#/core-manage-asdf
+brew install gpg asdf
+# Add language-specific plugins
+asdf plugin-add ruby
+asdf plugin-add erlang
+asdf plugin-add nodejs
+# Determine the current latest node version https://nodejs.org/en/download/
+asdf install nodejs 14.16.0
+asdf global nodejs 14.16.0
+
+
+# OPTION 2: language-specific managers:
 # Ruby Version Manager
 brew install rbenv
 # Node Version Manager
 brew install nvm
 # Node
 brew install node
+
+
+
 # Search all the files with `ag`!
 brew install the_silver_searcher
 # cd quickly with `j`!
