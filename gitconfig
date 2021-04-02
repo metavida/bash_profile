@@ -1,3 +1,6 @@
+# Always prefer ssh auth instead of https
+[url "git@github.com:"]
+	insteadOf = https://github.com/
 
 [commit]
   template = ~/.bash_scripts/gitmessage
@@ -63,5 +66,3 @@
   ignoreWhitespace = false
 [rerere]
   enabled = true
-[hub]
-  host = source.datanerd.us
