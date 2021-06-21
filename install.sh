@@ -90,7 +90,8 @@ asdf install nodejs 14.16.0
 asdf global nodejs 14.16.0
 
 
-
+# Install exa to replace `ls`
+brew install exa
 # Search all the files with `ag`!
 brew install the_silver_searcher
 # cd quickly with `j`!
