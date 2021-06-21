@@ -1,7 +1,7 @@
 # sudobin is Marcos' way of not just letting homebrew override any old system binary
 # Setup:
 #     sudo mkdir /usr/local/sudobin && sudo chmod 755 /usr/local/sudobin && sudo -k
-export PATH=/usr/local/sudobin:$PATH
+export PATH=/usr/local/sudobin:$PATH:/usr/local/sbin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/mwrightkuhns/.oh-my-zsh"
