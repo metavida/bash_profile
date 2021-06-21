@@ -90,15 +90,6 @@ asdf install nodejs 14.16.0
 asdf global nodejs 14.16.0
 
 
-# OPTION 2: language-specific managers:
-# Ruby Version Manager
-brew install rbenv
-# Node Version Manager
-brew install nvm
-# Node
-brew install node
-
-
 
 # Search all the files with `ag`!
 brew install the_silver_searcher
