@@ -30,6 +30,10 @@ echo "~/.gitconfig : Creating symlink..."
 mv ~/.gitconfig ~/.gitconfig.pre-bash_scripts || true
 ln -nfs "$BASH_SCRIPTS_DIR/gitconfig" ~/.gitconfig
 
+echo "~/.iex.exs : Creating symlink..."
+mv ~/.iex.exs ~/.iex.exs.pre-bash_scripts || true
+ln -nfs "$BASH_SCRIPTS_DIR/iex.exs" ~/.iex.exs
+
 if [ ! -f "$BASH_SCRIPTS_DIR/zsh-custom/keys.zsh" ]; then
   echo "keys.zsh : Creating empty placeholder..."
   cat > "$BASH_SCRIPTS_DIR/zsh-custom/keys.zsh" <<KEYS
