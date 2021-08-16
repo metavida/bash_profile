@@ -34,6 +34,10 @@ echo "~/.iex.exs : Creating symlink..."
 mv ~/.iex.exs ~/.iex.exs.pre-bash_scripts || true
 ln -nfs "$BASH_SCRIPTS_DIR/iex.exs" ~/.iex.exs
 
+echo "~/.asdfrc : Creating symlink..."
+mv ~/.asdfrc ~/.asdfrc.pre-bash_scripts || true
+ln -nfs "$BASH_SCRIPTS_DIR/asdfrc" ~/.asdfrc
+
 if [ ! -f "$BASH_SCRIPTS_DIR/zsh-custom/keys.zsh" ]; then
   echo "keys.zsh : Creating empty placeholder..."
   cat > "$BASH_SCRIPTS_DIR/zsh-custom/keys.zsh" <<KEYS
