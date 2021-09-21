@@ -43,7 +43,7 @@
 
 
 [user]
-  email = mwrightkuhns@pagerduty.com
+  email = webmaster@wrightkuhns.com
   name = Marcos Wright-Kuhns
 [push]
   default = simple
@@ -68,3 +68,6 @@
   enabled = true
 [init]
 	defaultBranch = main
+
+[includeIf "gitdir:~/workspace/"]
+  path = ~/.bash_scripts/gitconfig-for-work
