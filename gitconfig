@@ -8,6 +8,7 @@
 [alias]
   st = status --short --branch
   co = checkout
+  sw = switch
   # Given a GitHub PR number, check out the code for that PR
   co-pr = !sh -c 'git fetch upstream pull/$1/head:pr/$1 && git checkout pr/$1' -
   ci = commit
