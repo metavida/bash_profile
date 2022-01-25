@@ -112,6 +112,8 @@ brew install miller
 brew install shellcheck
 # short & sweet man pages
 brew install tldr
+# https://devutils.app to do all sorts of conversion things
+brew install devutils
 # dip - to help with dev mode in Docker
 brew tap bibendi/dip
 brew install dip
