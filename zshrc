@@ -1,13 +1,17 @@
+if [ -d /opt/homebrew/bin ]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
+
 # sudobin is Marcos' way of not just letting homebrew override any old system binary
-# Setup:
-#     sudo mkdir /usr/local/sudobin && sudo chmod 755 /usr/local/sudobin && sudo -k
-export PATH=/usr/local/sudobin:$PATH:/usr/local/sbin
+# Setup automatically via ./install.sh or manually via:
+#     sudo mkdir "$(brew --prefix)/sudobin" && sudo chmod 755 "$(brew --prefix)/sudobin" && sudo -k
+export PATH="$(brew --prefix)/sudobin:$PATH:/usr/local/sbin"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/mwrightkuhns/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Path to my git-backed .bash_scripts dir
-export BASH_SCRIPTS_DIR="/Users/mwrightkuhns/.bash_scripts"
+export BASH_SCRIPTS_DIR="$HOME/.bash_scripts"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
