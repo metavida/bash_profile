@@ -94,8 +94,8 @@ asdf plugin-add erlang
 asdf plugin-add elixir
 asdf plugin-add nodejs
 # Determine the current latest node version https://nodejs.org/en/download/
-asdf install nodejs 14.16.0
-asdf global nodejs 14.16.0
+asdf install nodejs 16.14.0
+asdf global nodejs 16.14.0
 
 
 # Install exa to replace `ls`
