@@ -1,0 +1,65 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "mwrightkuhns/local-tap", "./"
+tap "pagerduty/pd_brews"
+brew "autoconf", link: false
+brew "automake"
+brew "coreutils"
+brew "libtool"
+brew "libyaml"
+brew "unixodbc"
+brew "asdf"
+brew "autoconf@2.13"
+brew "sqlite"
+brew "autojump"
+brew "aws-es-proxy"
+brew "aws-okta"
+brew "curl"
+brew "dnsmasq"
+brew "wxwidgets"
+brew "elixir"
+brew "exa"
+brew "fop"
+brew "fx"
+brew "git"
+brew "guile"
+brew "gnutls"
+brew "gnupg"
+brew "jq"
+brew "dasel"
+brew "libxml2"
+brew "libxslt"
+brew "mas"
+brew "mysql-client"
+brew "python@3.9"
+brew "ruby-build"
+brew "shellcheck"
+brew "starship"
+brew "terraform"
+brew "the_silver_searcher"
+brew "tldr"
+brew "unzip"
+brew "yq"
+brew "mwrightkuhns/local-tap/autoconf@2.69"
+brew "pagerduty/pd_brews/pd-ssh"
+cask "devutils"
+cask "font-3270"
+cask "font-fira-code"
+cask "font-jetbrains-mono"
+mas "Amphetamine", id: 937984704
+mas "GarageBand", id: 682658836
+mas "Gifski", id: 1351639930
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Meeter", id: 1510445899
+mas "Monosnap", id: 540348655
+mas "Moom", id: 419330170
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pixelmator Pro", id: 1289583905
+mas "Sequel Ace", id: 1518036000
+mas "Table Tool", id: 1122008420
+mas "The Clock", id: 488764545

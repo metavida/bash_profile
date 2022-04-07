@@ -65,29 +65,15 @@ echo "2. Symlink apps to sudobin to override system defaults (e.g. sudo ln -nfs 
 echo "3. Add secret exports in the $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh file."
 exit 0
 
-echo "Configure homebrew"
-brew tap homebrew/cask
-brew tap homebrew/cask-fonts
+echo "Install all homebrew packages"
+# install/README.md has details about why I picked some of these apps/packages
+brew bundle install
 
-echo "Installing fonts"
-# https://github.com/tonsky/FiraCode
-brew install font-fira-code
-# https://www.jetbrains.com/lp/mono/
-brew install font-jetbrains-mono
-# https://github.com/rbanffy/3270font
-brew install font-3270
-
-# Starship prompt
-brew install starship
-
-# Install the latest git
-brew install git
+echo "Use the brew-installed git instead of system-provided git"
 sudo ln -nfs "$(brew --prefix)/bin/git" "$(brew --prefix)/sudobin/git"
 
-# Pick a version management option!
-# OPTION 1: asdf all-the-things:
-# First, install prerequisites listed here: https://asdf-vm.com/#/core-manage-asdf
-brew install gpg asdf
+echo "Install version management tools"
+# Prerequisites(https://asdf-vm.com/#/core-manage-asdf) should be installed by `brew bundle`
 # Add language-specific plugins
 asdf plugin-add ruby
 asdf plugin-add erlang
@@ -96,24 +82,3 @@ asdf plugin-add nodejs
 # Determine the current latest node version https://nodejs.org/en/download/
 asdf install nodejs 16.14.0
 asdf global nodejs 16.14.0
-
-
-# Install exa to replace `ls`
-brew install exa
-# Search all the files with `ag`!
-brew install the_silver_searcher
-# cd quickly with `j`!
-brew install autojump
-# JSON querying magic ✨
-brew install jq
-# Powerful CSV tooling
-brew install miller
-# shell linter
-brew install shellcheck
-# short & sweet man pages
-brew install tldr
-# https://devutils.app to do all sorts of conversion things
-brew install devutils
-# dip - to help with dev mode in Docker
-brew tap bibendi/dip
-brew install dip

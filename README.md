@@ -12,7 +12,7 @@ $ git clone git@github.com:metavida/bash_profile.git ~/.bash_scripts
 3. Run the install script to symlink .zshrc, .git/config, etc.
 ```
 $ cd ~/.bash_scripts
-$ ./install.sh
+$ ./install/install.sh
 ```
-4. Follow the rest of the isntall instructions to install a bunch of my offt-used apps.
+4. Follow the rest of the install instructions to install a bunch of my offt-used apps.
 5. Enjoy!
