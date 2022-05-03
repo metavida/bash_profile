@@ -79,6 +79,7 @@ asdf plugin-add ruby
 asdf plugin-add erlang
 asdf plugin-add elixir
 asdf plugin-add nodejs
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 # Determine the current latest node version https://nodejs.org/en/download/
 asdf install nodejs 16.14.0
 asdf global nodejs 16.14.0
