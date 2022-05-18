@@ -47,7 +47,7 @@
   email = webmaster@wrightkuhns.com
   name = Marcos Wright-Kuhns
 [push]
-  default = simple
+  default = current
 [pull]
   rebase = true
 [rebase]
