@@ -47,8 +47,12 @@ brew "mwrightkuhns/local-tap/autoconf@2.69"
 brew "pagerduty/pd_brews/pd-ssh"
 cask "devutils"
 cask "font-3270"
+cask "font-3270-nerd-font"
 cask "font-fira-code"
+cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-atkinson-hyperlegible"
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
