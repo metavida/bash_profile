@@ -4,9 +4,10 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "mwrightkuhns/local-tap", "./"
-tap "pagerduty/pd_brews"
+tap "pagerduty/pd_brews" # for PagerDuty
 brew "autoconf", link: false
 brew "automake"
+brew "circleci" # for PagerDuty
 brew "coreutils"
 brew "libtool"
 brew "libyaml"
@@ -15,8 +16,8 @@ brew "asdf"
 brew "autoconf@2.13"
 brew "sqlite"
 brew "autojump"
-brew "aws-es-proxy"
-brew "aws-okta"
+brew "aws-es-proxy" # for PagerDuty
+brew "aws-okta" # for PagerDuty
 brew "curl"
 brew "dnsmasq"
 brew "wxwidgets"
@@ -43,8 +44,8 @@ brew "the_silver_searcher"
 brew "tldr"
 brew "unzip"
 brew "yq"
-brew "mwrightkuhns/local-tap/autoconf@2.69"
-brew "pagerduty/pd_brews/pd-ssh"
+brew "mwrightkuhns/local-tap/autoconf@2.69" # for PagerDuty
+brew "pagerduty/pd_brews/pd-ssh" # for PagerDuty
 cask "devutils"
 cask "font-3270"
 cask "font-3270-nerd-font"
