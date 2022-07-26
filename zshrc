@@ -13,6 +13,12 @@ export ZSH="$HOME/.oh-my-zsh"
 # Path to my git-backed .bash_scripts dir
 export BASH_SCRIPTS_DIR="$HOME/.bash_scripts"
 
+# Path to my personal scripts
+# Leading commas inspired by https://rhodesmill.org/brandon/2009/commands-with-comma/
+if [ -d "$BASH_SCRIPTS_DIR/bin" ]; then
+  export PATH="$PATH:$BASH_SCRIPTS_DIR/bin"
+fi
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

@@ -1,0 +1,27 @@
+#!/bin/bash
+set -euo pipefail
+
+usage="Usage: $(basename "$0") [<num-paragraphs>] | --help"
+
+if [ "$#" -eq 0 ]; then
+  numParas=1
+else
+  numParas="$1"
+fi
+
+if [[ "$numParas" =~ ^--?h ]]; then
+  echo "$usage"; exit 0
+fi
+
+if [ "$#" -gt 1 ]; then
+  echo "Error: Only one argument is allowed."
+  echo "$usage"
+  exit 4
+fi
+if [[ ! "$numParas" =~ ^[0-9]+$ ]]; then
+  echo "Error: The first argument must be a number" >&2
+  echo "$usage"
+  exit 3
+fi
+
+curl -sS "https://baconipsum.com/api/?type=meat-and-filler&start-with-lorem=1&paras=$numParas" >&1 | jq -r 'join("\n\n")'
