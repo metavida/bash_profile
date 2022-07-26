@@ -1,0 +1,20 @@
+#!/bin/bash
+set -euo pipefail
+
+# For PagerDuty
+# Via https://pagerduty.atlassian.net/wiki/spaces/SRED/pages/2543322102/ECR+PagerDuty+Service+Owners+Guide#First-Time-ECR-Users
+
+usage="Usage: $(basename "$0") <image-name> | --help"
+
+if [ "$#" -eq 0 ] || [ "$#" -gt 1 ]; then
+  echo "Error: Only 1 image name is allowed."
+  echo "$usage"
+  exit 2
+fi
+
+if [[ "$1" =~ ^--?h ]]; then
+  echo "$usage"
+  exit 0
+fi
+
+aws-okta exec ro-prod -- docker pull 748801462010.dkr.ecr.us-west-2.amazonaws.com/"$1"

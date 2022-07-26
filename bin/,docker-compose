@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+
+# For PagerDuty
+# Via https://pagerduty.atlassian.net/wiki/spaces/SRED/pages/2543322102/ECR+PagerDuty+Service+Owners+Guide#First-Time-ECR-Users
+
+aws-okta exec ro-prod -- docker compose "$@"
