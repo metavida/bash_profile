@@ -1,4 +1,4 @@
-GOPATH_FROM_GO="$(go env GOPATH)"
+GOPATH_FROM_GO="$(go env GOPATH 2>/dev/null)"
 
 if [ $? -eq 0 ]; then
   export GOPATH="$GOPATH_FROM_GO"
