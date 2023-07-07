@@ -3,5 +3,5 @@ if [[ $? -eq 0 ]]; then
   alias ls="exa -g"
   alias ll="exa -lag"
 else
-  echo "No exa found!"
+  echo "Skipped alias: No 'exa' found"
 fi

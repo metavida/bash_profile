@@ -20,6 +20,7 @@ brew "aws-es-proxy" # for PagerDuty
 brew "aws-okta" # for PagerDuty
 brew "curl"
 brew "dnsmasq"
+brew "dog"
 brew "wxwidgets"
 brew "elixir"
 brew "exa"
