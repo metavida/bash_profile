@@ -1,0 +1,25 @@
+#!/bin/bash
+set -euo pipefail
+
+usage="Usage: a8e <long-word> | --help"
+
+if [ "$#" -ne 1 ]; then
+  echo "Error: Must provide one argument: a word to be abbreviated."; echo ""
+  echo "$usage"
+  exit 4
+fi
+
+word="$1"
+
+if [[ "$word" =~ ^--?h ]]; then
+  echo "a8e abbreviates the given by replacing the middle with the number of characters in between."
+  echo ""
+  echo "$usage"
+  echo ""
+  echo "Examples:"
+  echo "  a8e 'abbreviate' # a8e"
+  exit 0
+fi
+
+LEN=$(( $(echo -n $1 | wc -c) - 2))
+echo $1 | sed "s/^\(.\).*\(.\)$/\1$LEN\2/";
