@@ -1,23 +1,26 @@
 #!/bin/bash
 set -euo pipefail
 
-usage="Usage: a8e <long-word> | --help"
+usage () {
+cat <<- EOF
+
+Usage: $(basename "$0") <long-word> | --help"
+
+Example: $(basename "$0") 'abbreviate' # a8e
+EOF
+}
 
 if [ "$#" -ne 1 ]; then
-  echo "Error: Must provide one argument: a word to be abbreviated."; echo ""
-  echo "$usage"
+  echo "Error: Must provide one argument: a word to be abbreviated."
+  usage
   exit 4
 fi
 
 word="$1"
 
 if [[ "$word" =~ ^--?h ]]; then
-  echo "a8e abbreviates the given by replacing the middle with the number of characters in between."
-  echo ""
-  echo "$usage"
-  echo ""
-  echo "Examples:"
-  echo "  a8e 'abbreviate' # a8e"
+  echo "$(basename "$0") abbreviates the given by replacing the middle with the number of characters in between."
+  usage
   exit 0
 fi
 

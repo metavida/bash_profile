@@ -1,0 +1,31 @@
+#!/bin/bash
+set -euo pipefail
+
+usage="Usage: $(basename "$0") <long-word> | --help"
+
+usage () {
+cat <<- EOF
+
+Usage: $(basename "$0") <a8e> | --help"
+
+Example: $(basename "$0") 'i18n' # internationalization
+EOF
+}
+
+if [ "$#" -ne 1 ]; then
+  echo "Error: Must provide one argument: an a8e abbreviation to expand."
+  usage
+  exit 4
+fi
+
+word="$1"
+
+if [[ "$word" =~ ^--?h ]]; then
+  echo "$(basename "$0") extrapolate possible words that an a8e abbreviation might represent."
+  usage
+  exit 0
+fi
+
+LEN=$(echo $1 | sed 's/^.\(.*\).$/\1/')
+GREP=$(echo $1 |sed "s/^\(.\).*\(.\)$/^\1.{$LEN}\2$/")
+grep -E "$GREP" /usr/share/dict/words; 
