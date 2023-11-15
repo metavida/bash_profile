@@ -63,6 +63,7 @@ cask "font-fira-code-nerd-font"
 cask "font-gilbert"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-monaspace"
 mas "Amphetamine", id: 937984704
 mas "Boxy SVG", id: 611658502
 mas "GarageBand", id: 682658836
