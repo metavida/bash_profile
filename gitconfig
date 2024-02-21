@@ -52,6 +52,8 @@
   rebase = true
 [rebase]
   autoStash = true
+[branch]
+  sort = committerdate
 [filter "media"]
   clean = git media clean %f
   smudge = git media smudge %f
@@ -61,14 +63,25 @@
   autocrlf = input
   # excludesFile = ~/.bash_scripts/gitignore
   precomposeunicode = true
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  # side-by-side = true
+  navigate = true
+  light = false
 [merge]
   ff = false
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
+  algorithm = histogram
 [apply]
   ignoreWhitespace = false
 [rerere]
   enabled = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [includeIf "gitdir:~/workspace/"]
   path = ~/.bash_scripts/gitconfig-for-work
