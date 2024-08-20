@@ -20,7 +20,7 @@ brew "aws-okta" # for PagerDuty
 brew "curl"
 brew "dasel"
 brew "dnsmasq"
-brew "dog"
+brew "doggo"
 brew "wxwidgets"
 brew "elixir"
 brew "eza"
