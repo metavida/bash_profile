@@ -55,28 +55,28 @@ fi
 if [ $DO_DOTFILES -eq 1 ]; then
   echo "Installing dotfiles..."
 
-  echo "Create symlinks to the $BASH_SCRIPTS_DIR directory? [yN] "
+  echo "Create symlinks to the dotfiles in the $BASH_SCRIPTS_DIR directory? [yN] "
   read -r yn
     case $yn in
-      [Yy]* ) echo "Installing ...";;
-      * ) echo "Canceled. No changes made." && exit 0;;
+      [Yy]* )
+        echo "~/.zshrc : Creating symlink..."
+        mv ~/.zshrc ~/.zshrc.pre-bash_scripts || true
+        ln -nfs "$BASH_SCRIPTS_DIR/zshrc" ~/.zshrc
+
+        echo "~/.gitconfig : Creating symlink..."
+        mv ~/.gitconfig ~/.gitconfig.pre-bash_scripts || true
+        ln -nfs "$BASH_SCRIPTS_DIR/gitconfig" ~/.gitconfig
+
+        echo "~/.iex.exs : Creating symlink..."
+        mv ~/.iex.exs ~/.iex.exs.pre-bash_scripts || true
+        ln -nfs "$BASH_SCRIPTS_DIR/iex.exs" ~/.iex.exs
+
+        echo "~/.asdfrc : Creating symlink..."
+        mv ~/.asdfrc ~/.asdfrc.pre-bash_scripts || true
+        ln -nfs "$BASH_SCRIPTS_DIR/asdfrc" ~/.asdfrc
+        ;;
+      * ) echo "Skipped dotfile symlinks";;
     esac
-
-  echo "~/.zshrc : Creating symlink..."
-  mv ~/.zshrc ~/.zshrc.pre-bash_scripts || true
-  ln -nfs "$BASH_SCRIPTS_DIR/zshrc" ~/.zshrc
-
-  echo "~/.gitconfig : Creating symlink..."
-  mv ~/.gitconfig ~/.gitconfig.pre-bash_scripts || true
-  ln -nfs "$BASH_SCRIPTS_DIR/gitconfig" ~/.gitconfig
-
-  echo "~/.iex.exs : Creating symlink..."
-  mv ~/.iex.exs ~/.iex.exs.pre-bash_scripts || true
-  ln -nfs "$BASH_SCRIPTS_DIR/iex.exs" ~/.iex.exs
-
-  echo "~/.asdfrc : Creating symlink..."
-  mv ~/.asdfrc ~/.asdfrc.pre-bash_scripts || true
-  ln -nfs "$BASH_SCRIPTS_DIR/asdfrc" ~/.asdfrc
 
   if [ ! -f "$BASH_SCRIPTS_DIR/zsh-custom/keys.zsh" ]; then
     echo "keys.zsh : Creating empty placeholder..."
@@ -155,3 +155,10 @@ if [ $DO_ASDF -eq 1 ]; then
 
   exit 0
 fi
+
+# TODO
+# * https://github.com/PagerDuty/homebrew-pd_brews
+#     * aws-okta
+#     * pd-ssh
+#     * pd-kubectx
+#     * pd-kayak
