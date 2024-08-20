@@ -16,7 +16,6 @@ brew "autoconf@2.13"
 brew "sqlite"
 brew "autojump"
 brew "aws-es-proxy" # for PagerDuty
-brew "aws-okta" # for PagerDuty
 brew "curl"
 brew "dasel"
 brew "dnsmasq"
@@ -39,6 +38,7 @@ brew "mas"
 brew "mysql-client"
 brew "python@3.9"
 brew "ruby-build"
+brew "saml2aws" # for PagerDuty
 brew "shellcheck"
 brew "starship"
 brew "terraform"
@@ -48,6 +48,8 @@ brew "unzip"
 brew "watchman"
 brew "yq"
 brew "mwrightkuhns/local-tap/autoconf@2.69" # for PagerDuty
+brew "pagerduty/pd_brews/aws-okta" # for PagerDuty
+brew "pagerduty/pd_brews/pd-kubectx" # for PagerDuty
 brew "pagerduty/pd_brews/pd-ssh" # for PagerDuty
 brew "qmk/qmk/qmk"
 cask "1password-cli"
