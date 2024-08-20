@@ -67,13 +67,9 @@ mas "Amphetamine", id: 937984704
 mas "Boxy SVG", id: 611658502
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
 mas "Meeter", id: 1510445899
 mas "Monosnap", id: 540348655
 mas "Moom", id: 419330170
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
 mas "Sequel Ace", id: 1518036000
 mas "Table Tool", id: 1122008420
