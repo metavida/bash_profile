@@ -1,8 +1,5 @@
 tap "1password/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "mwrightkuhns/local-tap", "./"
 tap "pagerduty/pd_brews" # for PagerDuty
