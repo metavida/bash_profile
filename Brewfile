@@ -47,7 +47,7 @@ brew "tldr"
 brew "unzip"
 brew "watchman"
 brew "yq"
-brew "mwrightkuhns/local-tap/autoconf@2.69" # for PagerDuty
+# brew "mwrightkuhns/local-tap/autoconf@2.69" # for PagerDuty
 brew "pagerduty/pd_brews/aws-okta" # for PagerDuty
 brew "pagerduty/pd_brews/pd-kubectx" # for PagerDuty
 brew "pagerduty/pd_brews/pd-ssh" # for PagerDuty

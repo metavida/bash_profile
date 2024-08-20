@@ -120,8 +120,13 @@ if [ $DO_BREW -eq 1 ]; then
   # install/README.md has details about why I picked some of these apps/packages
   brew bundle install
 
-  echo "Use the brew-installed git instead of system-provided git"
-  sudo ln -nfs "$(brew --prefix)/bin/git" "$(brew --prefix)/sudobin/git"
+  echo ""
+  if [ ! -f "$SUDOBIN_PATH/git" ]; then
+    echo "Use the brew-installed git instead of system-provided git"
+    sudo ln -nfs "$(brew --prefix)/bin/git" "$SUDOBIN_PATH/git"
+  else
+    echo "Skipping git symlink: $SUDOBIN_PATH/git already exists"
+  fi
 
   echo ""
   echo "App installation via Homebrew Complete!!"
