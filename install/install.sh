@@ -111,10 +111,10 @@ if [ $DO_BREW -eq 1 ]; then
   echo ""
   if [ ! -d "$SUDOBIN_PATH" ]; then
     sudo mkdir "$SUDOBIN_PATH"
+    sudo chmod 755 "$SUDOBIN_PATH"
+    sudo chown root:wheel "$SUDOBIN_PATH"
+    sudo -k
   fi
-  sudo chmod 755 "$SUDOBIN_PATH"
-  sudo chown root:wheel "$SUDOBIN_PATH"
-  sudo -k
 
   echo "Install all homebrew packages"
   # install/README.md has details about why I picked some of these apps/packages
