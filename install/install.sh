@@ -147,23 +147,18 @@ if [ $DO_ASDF -eq 1 ]; then
   asdf plugin-add nodejs
   asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
   # Determine the current latest node version https://nodejs.org/en/download/
-  asdf install nodejs 16.14.0
-  asdf global nodejs 16.14.0
+  asdf install nodejs 20.16.0
+  asdf global nodejs 20.16.0
 
   echo ""
   echo "asdf setup Complete!!"
   echo ""
-  echo "Put secret exports in the $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh file."
+  echo "A few next steps:"
+  echo "1. Put secret exports in the $BASH_SCRIPTS_DIR/zsh-custom/keys.zsh file."
+  echo "2. Open a new Terminal tab/window to experience the new setup."
   echo ""
   echo "Otherwise that's it! Enjoy your new Mac!"
   echo ""
 
   exit 0
 fi
-
-# TODO
-# * https://github.com/PagerDuty/homebrew-pd_brews
-#     * aws-okta
-#     * pd-ssh
-#     * pd-kubectx
-#     * pd-kayak
