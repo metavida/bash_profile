@@ -52,6 +52,7 @@ brew "pagerduty/pd_brews/pd-ssh" # for PagerDuty
 brew "qmk/qmk/qmk"
 cask "1password-cli"
 cask "devutils"
+cask "docker"
 cask "font-3270"
 cask "font-3270-nerd-font"
 cask "font-atkinson-hyperlegible"
@@ -61,6 +62,7 @@ cask "font-gilbert"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-monaspace"
+cask "licecap"
 mas "Amphetamine", id: 937984704
 mas "Boxy SVG", id: 611658502
 mas "GarageBand", id: 682658836
