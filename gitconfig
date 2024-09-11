@@ -2,8 +2,8 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 
-[commit]
-  template = ~/.bash_scripts/gitmessage
+#[commit]
+#  template = ~/.bash_scripts/gitmessage
 
 [alias]
   st = status --short --branch
@@ -85,3 +85,7 @@
 
 [includeIf "gitdir:~/workspace/"]
   path = ~/.bash_scripts/gitconfig-for-work
+[commit]
+	template = /Users/mwrightkuhns/.gitmessage
+[git-mob]
+	co-author = Tyurina <tyurina@pagerduty.com>

@@ -26,6 +26,7 @@ brew "eza"
 brew "fop"
 brew "fx"
 brew "git"
+brew "git-delta" # Used for gitconfig `pager = delta`
 brew "guile"
 brew "p11-kit"
 brew "unbound"
