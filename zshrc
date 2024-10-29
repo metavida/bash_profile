@@ -1,6 +1,9 @@
 if [ -d /opt/homebrew/bin ]; then
   export PATH="/opt/homebrew/bin:$PATH"
 fi
+if [ -d /opt/homebrew/sbin ]; then
+  export PATH="/opt/homebrew/sbin:$PATH"
+fi
 
 # sudobin is Marcos' way of not just letting homebrew override any old system binary
 # Setup automatically via ./install.sh or manually via:
