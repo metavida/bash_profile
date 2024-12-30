@@ -2,6 +2,7 @@
 set -euo pipefail
 
 DO_DOTFILES=0
+DO_SSH=0
 DO_BREW=0
 DO_ASDF=0
 
@@ -16,6 +17,7 @@ Usage:
 
 Options: (typically run in this order)
   --dotfiles Install dotfiles
+  --ssh      Configure ssh
   --brew     Install Homebrew packages
   --asdf     Install ASDF version management tools
 
@@ -28,6 +30,8 @@ case "$opt" in
         usage; exit 0;;
     "--dotfiles" )
         DO_DOTFILES=1;;
+    "--ssh" )
+        DO_SSH=1;;
     "--brew" )
         DO_BREW=1;;
     "--asdf" )
@@ -63,6 +67,12 @@ if [ $DO_DOTFILES -eq 1 ]; then
         mv ~/.zshrc ~/.zshrc.pre-bash_scripts || true
         ln -nfs "$BASH_SCRIPTS_DIR/zshrc" ~/.zshrc
 
+        echo "~/.ssh/config : Creating symlink..."
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        mv ~/.ssh/config ~/.ssh/config.pre-bash_scripts || true
+        ln -nfs "$BASH_SCRIPTS_DIR/sshconfig" ~/.ssh/config
+
         echo "~/.gitconfig : Creating symlink..."
         mv ~/.gitconfig ~/.gitconfig.pre-bash_scripts || true
         ln -nfs "$BASH_SCRIPTS_DIR/gitconfig" ~/.gitconfig
@@ -94,6 +104,32 @@ KEYS
   echo ""
   echo "    ./install/install.sh --brew"
   exit 0
+fi
+
+if [ $DO_SSH -eq 1 ]; then
+  echo "Configuring SSH..."
+  echo "Using guidance from https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+  echo ""
+
+  SSH_PATH="$HOME/.ssh/id_ed25519"
+
+  # If ~/.ssh/id_ed25519 already exists skip this step
+  if [ -f "$SSH_PATH" ]; then
+    echo "SSH key already exists, $SSH_PATH, skipping SSH key generation"
+  else
+    echo "Creating an SSH key pair for GitHub..."
+    echo ""
+    echo "IMPORTANT: Generate & Save the SSH key passphrase in 1Password!!"
+    ssh-keygen -t ed25519 -C "webmaster@kuhnsfam.com"
+  fi
+
+  echo ""
+  echo "Adding SSH key to the ssh-agent"
+  # If ssh-agent is not running, start it
+  pgrep -q ssh-agent || eval "$(ssh-agent -s)"
+  ssh-add --apple-use-keychain "$SSH_PATH"
+  pbcopy < "$SSH_PATH.pub"
+  echo "Public key, $SSH_PATH.pub, copied to clipboard."
 fi
 
 if [ $DO_BREW -eq 1 ]; then
