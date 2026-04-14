@@ -164,6 +164,8 @@ if [ $DO_BREW -eq 1 ]; then
     echo "Skipping git symlink: $SUDOBIN_PATH/git already exists"
   fi
 
+  # TODO: Maybe suggest configuring colima to start at login? `brew services start colima`
+
   echo ""
   echo "App installation via Homebrew Complete!!"
   echo ""
