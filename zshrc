@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Path to my git-backed .bash_scripts dir
 export BASH_SCRIPTS_DIR="$HOME/.bash_scripts"
 
-# Path costomization continues via the z_path_updates plugin, which is loaded in the plugins section below.
+# Path costomization continues via the path_updates plugin, which is loaded in the plugins section below.
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -78,7 +78,7 @@ ZSH_CUSTOM="$BASH_SCRIPTS_DIR/zsh-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf z_path_updates)
+plugins=(git asdf path_updates)
 
 source $ZSH/oh-my-zsh.sh
 
