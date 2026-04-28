@@ -87,5 +87,5 @@
   path = ~/.bash_scripts/gitconfig-for-work
 [commit]
 	template = /Users/mwrightkuhns/.gitmessage
-[git-mob]
-	co-author = Tyurina <tyurina@pagerduty.com>
+# [git-mob]
+# 	co-author = Tyurina <tyurina@pagerduty.com>
