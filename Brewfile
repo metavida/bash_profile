@@ -55,6 +55,7 @@ brew "yq"
 brew "pagerduty/pd_brews/aws-okta" # for PagerDuty
 brew "pagerduty/pd_brews/pd-kubectx" # for PagerDuty
 brew "pagerduty/pd_brews/pd-ssh" # for PagerDuty
+brew "claude-code"
 brew "qmk/qmk/qmk"
 cask "1password-cli"
 cask "devutils"

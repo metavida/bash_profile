@@ -5,22 +5,14 @@ if [ -d /opt/homebrew/sbin ]; then
   export PATH="/opt/homebrew/sbin:$PATH"
 fi
 
-# sudobin is Marcos' way of not just letting homebrew override any old system binary
-# Setup automatically via ./install.sh or manually via:
-#     sudo mkdir "$(brew --prefix)/sudobin" && sudo chmod 755 "$(brew --prefix)/sudobin" && sudo -k
-export PATH="$(brew --prefix)/sudobin:$PATH:/usr/local/sbin"
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Path to my git-backed .bash_scripts dir
 export BASH_SCRIPTS_DIR="$HOME/.bash_scripts"
 
-# Path to my personal scripts
-# Leading commas inspired by https://rhodesmill.org/brandon/2009/commands-with-comma/
-if [ -d "$BASH_SCRIPTS_DIR/bin" ]; then
-  export PATH="$PATH:$BASH_SCRIPTS_DIR/bin"
-fi
+# Path costomization continues via the path_updates plugin, which is loaded in the plugins section below.
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -86,7 +78,7 @@ ZSH_CUSTOM="$BASH_SCRIPTS_DIR/zsh-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf)
+plugins=(git asdf path_updates)
 
 source $ZSH/oh-my-zsh.sh
 

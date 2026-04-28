@@ -164,6 +164,14 @@ if [ $DO_BREW -eq 1 ]; then
     echo "Skipping git symlink: $SUDOBIN_PATH/git already exists"
   fi
 
+  echo ""
+  if [ ! -f "$SUDOBIN_PATH/claude" ]; then
+    echo "Use the brew-installed claude instead of shims from asdf or other sources"
+    sudo ln -nfs "$(brew --prefix)/bin/claude" "$SUDOBIN_PATH/claude"
+  else
+    echo "Skipping claude symlink: $SUDOBIN_PATH/claude already exists"
+  fi
+
   # TODO: Maybe suggest configuring colima to start at login? `brew services start colima`
 
   echo ""
