@@ -111,16 +111,16 @@ if [ $DO_SSH -eq 1 ]; then
   echo "Using guidance from https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
   echo ""
 
-  SSH_PATH="$HOME/.ssh/id_ed25519"
+  SSH_PATH="$HOME/.ssh/id_rsa"
 
-  # If ~/.ssh/id_ed25519 already exists skip this step
+  # If ~/.ssh/id_rsa already exists skip this step
   if [ -f "$SSH_PATH" ]; then
     echo "SSH key already exists, $SSH_PATH, skipping SSH key generation"
   else
     echo "Creating an SSH key pair for GitHub..."
     echo ""
     echo "IMPORTANT: Generate & Save the SSH key passphrase in 1Password!!"
-    ssh-keygen -t ed25519 -C "webmaster@kuhnsfam.com"
+    ssh-keygen -t rsa -b 4096 -C "webmaster@kuhnsfam.com" -f "$SSH_PATH"
   fi
 
   echo ""
