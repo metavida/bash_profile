@@ -192,6 +192,7 @@ if [ $DO_ASDF -eq 1 ]; then
   asdf plugin-add elixir
   asdf plugin-add nodejs
   asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+  asdf plugin-add java
   # Determine the current latest node version https://nodejs.org/en/download/
   asdf install nodejs 20.16.0
   asdf global nodejs 20.16.0
