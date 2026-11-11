@@ -4,6 +4,7 @@ tap "homebrew/services"
 tap "mwrightkuhns/local-tap", "./"
 tap "pagerduty/pd_brews" # for PagerDuty
 tap "qmk/qmk"
+tap "datadog-labs/pack"
 brew "autoconf", link: false
 brew "automake"
 brew "circleci" # for PagerDuty
@@ -40,6 +41,7 @@ brew "docker-compose"
 brew "colima" # CLI for container runtimes
 brew "mas"
 brew "mysql-client"
+brew "datadog-labs/pack/pack" # Datadog CLI https://docs.datadoghq.com/cli/
 brew "python@3.9"
 brew "ruby-build"
 brew "saml2aws" # for PagerDuty
